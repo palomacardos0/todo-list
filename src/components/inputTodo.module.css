@@ -24,8 +24,10 @@
   background: var(--blue-dark);
   border-radius: 8px;
   color: var(--gray-100);
+  font-weight: 700;
   border: none;
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
 
@@ -33,8 +35,4 @@
 }
 .formAddTodo button:hover {
   background: var(--blue);
-}
-
-.formAddTodo button img {
-  margin-left: 8px;
 }
