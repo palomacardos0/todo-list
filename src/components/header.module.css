@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: var(--gray-700);
+
+  position: relative;
+}
+
+.logoContainer {
+  margin: 72px auto 80px;
+}
+
+.logoText {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 48px;
+  color: var(--blue);
+  margin-left: 12px;
+}
+
+.logoText > span {
+  color: var(--purple);
+}

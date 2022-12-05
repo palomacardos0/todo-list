@@ -1,0 +1,40 @@
+.formAddTodo {
+  position: absolute;
+  bottom: -27px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formAddTodo input {
+  width: 100%;
+  max-width: 638px;
+  height: 54px;
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  outline: none;
+  background: var(--gray-500);
+  margin-right: 8px;
+  padding: 16px;
+}
+
+.formAddTodo button {
+  width: 90px;
+  height: 52px;
+  background: var(--blue-dark);
+  border-radius: 8px;
+  color: var(--gray-100);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s;
+}
+.formAddTodo button:hover {
+  background: var(--blue);
+}
+
+.formAddTodo button img {
+  margin-left: 8px;
+}
