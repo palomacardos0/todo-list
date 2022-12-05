@@ -7,7 +7,7 @@ export function InputTodo() {
     <form action="" className={styles.formAddTodo}>
       <input type="text" placeholder="Adicione uma nova tarefa" />
       <button type="submit">
-        Criar <PlusCircle size={16} />
+        Criar <PlusCircle size={16} color={'white'} />
       </button>
     </form>
   )

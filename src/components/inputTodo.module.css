@@ -33,6 +33,7 @@
 
   transition: background 0.2s;
 }
+
 .formAddTodo button:hover {
   background: var(--blue);
 }
