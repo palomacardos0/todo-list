@@ -24,6 +24,12 @@ export function TodoList() {
         'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
       id: uuidv4(),
       isComplet: true
+    },
+    {
+      title:
+        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      id: uuidv4(),
+      isComplet: true
     }
   ])
 
@@ -37,17 +43,25 @@ export function TodoList() {
     setListTodo(task)
   }
 
+  function handleDeleteTask(id: string) {
+    const task = listTodo.filter(task => task.id !== id)
+    setListTodo(task)
+  }
+
   return (
     <section className={styles.todoContent}>
       <div className={styles.todoContent__header}>
         <div>
           Tarefas criadas
-          <span>0</span>
+          <span>{listTodo.length}</span>
         </div>
 
         <div>
           Concluídas
-          <span>0</span>
+          <span>
+            {listTodo.filter(task => task.isComplet).length} de{' '}
+            {listTodo.length}
+          </span>
         </div>
       </div>
 
@@ -92,7 +106,14 @@ export function TodoList() {
                 >
                   {task.title}
                 </p>
-                <Trash size={16} />
+                <button
+                  className={styles.todoContent__deletTask}
+                  onClick={() => {
+                    handleDeleteTask(task.id)
+                  }}
+                >
+                  <Trash size={16} />
+                </button>
               </div>
             )
           })}
