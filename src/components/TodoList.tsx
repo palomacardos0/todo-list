@@ -1,7 +1,7 @@
 import styles from './todoList.module.css'
 import ListIcon from '../assets/list-icon.svg'
 
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4, V4Options } from 'uuid'
 import { useState } from 'react'
 import { Check, Trash } from 'phosphor-react'
 
@@ -14,16 +14,28 @@ interface todoListProps {
 export function TodoList() {
   const [listTodo, setListTodo] = useState([
     {
-      title: 'tarefa 1',
-      id: uuidv4(),
-      isComplet: true
-    },
-    {
-      title: 'tarefa 2',
+      title:
+        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
       id: uuidv4(),
       isComplet: false
+    },
+    {
+      title:
+        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      id: uuidv4(),
+      isComplet: true
     }
   ])
+
+  function handleChangeTaskStatus(id: string) {
+    const task = listTodo.map(tsk => {
+      if (tsk.id === id) {
+        return { ...tsk, isComplet: !tsk.isComplet }
+      }
+      return tsk
+    })
+    setListTodo(task)
+  }
 
   return (
     <section className={styles.todoContent}>
@@ -65,6 +77,7 @@ export function TodoList() {
                       ? styles.todoContent__buttomDisabled
                       : styles.todoContent__buttomActive
                   }`}
+                  onClick={() => handleChangeTaskStatus(task.id)}
                 >
                   {task.isComplet && (
                     <Check size={12} weight="bold" color="white" />
