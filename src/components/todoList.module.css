@@ -97,3 +97,10 @@
   text-decoration-line: line-through;
   color: var(--gray-300);
 }
+.todoContent__deletTask {
+  background: transparent;
+  border: none;
+  outline: transparent;
+  height: max-content;
+  line-height: 0;
+}

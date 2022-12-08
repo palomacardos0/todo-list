@@ -26,6 +26,7 @@ export function InputTodo({ addTask }: InputTodoProps) {
       isComplet: false
     }
     addTask(newTask)
+    setTask('')
   }
 
   function handleNewTasKChange(event: ChangeEvent<HTMLInputElement>) {
