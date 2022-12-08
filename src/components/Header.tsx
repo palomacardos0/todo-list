@@ -1,7 +1,6 @@
 import LogoImage from '../assets/todo-logo.svg'
 
 import styles from './header.module.css'
-import { InputTodo } from './InputTodo'
 
 export function Header() {
   return (
@@ -12,7 +11,6 @@ export function Header() {
           to<span>do</span>
         </span>
       </div>
-      <InputTodo />
     </header>
   )
 }

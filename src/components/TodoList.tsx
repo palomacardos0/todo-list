@@ -1,52 +1,46 @@
 import styles from './todoList.module.css'
 import ListIcon from '../assets/list-icon.svg'
 
-import { v4 as uuidv4, V4Options } from 'uuid'
+import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
 import { Check, Trash } from 'phosphor-react'
 
-interface todoListProps {
+interface ListTodoProps {
+  listTodo: TaksProps[]
+  handleDeleteTask: (id: string) => void
+  handleChangeTaskStatus: (id: string) => void
+}
+interface TaksProps {
   title: string
   id: string
   isComplet: boolean
 }
 
-export function TodoList() {
-  const [listTodo, setListTodo] = useState([
-    {
-      title:
-        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-      id: uuidv4(),
-      isComplet: false
-    },
-    {
-      title:
-        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-      id: uuidv4(),
-      isComplet: true
-    },
-    {
-      title:
-        'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-      id: uuidv4(),
-      isComplet: true
-    }
-  ])
-
-  function handleChangeTaskStatus(id: string) {
-    const task = listTodo.map(tsk => {
-      if (tsk.id === id) {
-        return { ...tsk, isComplet: !tsk.isComplet }
-      }
-      return tsk
-    })
-    setListTodo(task)
-  }
-
-  function handleDeleteTask(id: string) {
-    const task = listTodo.filter(task => task.id !== id)
-    setListTodo(task)
-  }
+export function TodoList({
+  listTodo,
+  handleChangeTaskStatus,
+  handleDeleteTask
+}: ListTodoProps) {
+  // const [listTodo, setListTodo] = useState([
+  //   {
+  //     title:
+  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  //     id: uuidv4(),
+  //     isComplet: false
+  //   },
+  //   {
+  //     title:
+  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  //     id: uuidv4(),
+  //     isComplet: true
+  //   },
+  //   {
+  //     title:
+  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+  //     id: uuidv4(),
+  //     isComplet: true
+  //   }
+  // ])
 
   return (
     <section className={styles.todoContent}>
