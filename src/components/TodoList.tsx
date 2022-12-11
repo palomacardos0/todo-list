@@ -21,27 +21,6 @@ export function TodoList({
   handleChangeTaskStatus,
   handleDeleteTask
 }: ListTodoProps) {
-  // const [listTodo, setListTodo] = useState([
-  //   {
-  //     title:
-  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  //     id: uuidv4(),
-  //     isComplet: false
-  //   },
-  //   {
-  //     title:
-  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  //     id: uuidv4(),
-  //     isComplet: true
-  //   },
-  //   {
-  //     title:
-  //       'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-  //     id: uuidv4(),
-  //     isComplet: true
-  //   }
-  // ])
-
   return (
     <section className={styles.todoContent}>
       <div className={styles.todoContent__header}>
@@ -53,8 +32,10 @@ export function TodoList({
         <div>
           Concluídas
           <span>
-            {listTodo.filter(task => task.isComplet).length} de{' '}
-            {listTodo.length}
+            {listTodo.reduce((completedTask, task) => {
+              return task.isComplet ? completedTask + 1 : completedTask + 0
+            }, 0)}{' '}
+            de {listTodo.length}
           </span>
         </div>
       </div>
