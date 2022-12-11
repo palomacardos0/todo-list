@@ -50,6 +50,8 @@ function App() {
   }
 
   function addTask(task: TaksProps) {
+    const taskText = task.title.trim()
+    if (taskText === '') return
     setListTodo([task, ...listTodo])
   }
   return (
