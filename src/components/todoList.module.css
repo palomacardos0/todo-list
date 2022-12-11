@@ -1,7 +1,8 @@
 .todoContent {
   width: 100%;
-  max-width: 736px;
+  max-width: 775px;
   margin: 91px auto;
+  padding: 0 20px;
 }
 
 .todoContent__header {

@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .formAddTodo input {
@@ -32,6 +33,7 @@
   justify-content: center;
 
   transition: background 0.2s;
+  padding: 0 10px;
 }
 
 .formAddTodo button:hover {
